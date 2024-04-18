@@ -1,4 +1,4 @@
-url = "mongodb+srv://sarjounsd:1910Sarjoun@cluster0.2ttjfk4.mongodb.net/"
+url = "mongodb+srv://sarjounsd:1910Sarjoun@recipesharing.qtxatk9.mongodb.net/"
 
 const express = require("express");
 
