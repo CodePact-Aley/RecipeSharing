@@ -1,11 +1,22 @@
-url = "mongodb+srv://sarjounsd:1910Sarjoun@recipesharing.qtxatk9.mongodb.net/"
+const url = "mongodb+srv://sarjounsd:1910Sarjoun@recipesharing.qtxatk9.mongodb.net/"
 
-const express = require("express");
+import express from "express";
 
-const mongoose = require("mongoose");
+import { connect } from "mongoose";
 const app = express();
 
-mongoose.connect(url)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((error) => console.error('MongoDB connection error:', error));
+const connectdb = async(dbURL) => {
+  try{
+    await connect(dbURL)
+    .then(() => console.log('Connected to MongoDB'),
+    (error) => console.error('MongoDB connection error:', error)
+    );
+
+  } catch(error){
+    console.log(error)
+  }
+};
+
+connectdb(url);
+
 app.listen(3000, () => console.log("Server is running"));
