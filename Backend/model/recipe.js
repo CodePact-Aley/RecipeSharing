@@ -4,63 +4,63 @@ const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
   _id: {
-    type: Schema.Types.ObjectId // Corrected
+    type: Schema.Types.ObjectId
   },
   author_id: {
-    type: Schema.Types.ObjectId, // Corrected
+    type: Schema.Types.ObjectId,
     required: true
   },
   title: {
-    type: String, // Corrected
+    type: String,
     required: true
   },
   description: {
-    type: String, // Corrected
+    type: String,
     required: true
   },
   ingredients: {
-    type: [Schema.Types.ObjectId] // Corrected
+    type: [Schema.Types.ObjectId]
   },
   categories: {
-    type: [Schema.Types.ObjectId] // Corrected
+    type: [Schema.Types.ObjectId]
   },
   tags: {
-    type: [Schema.Types.ObjectId] // Corrected
+    type: [Schema.Types.ObjectId]
   },
   steps: {
     type: [
       {
         step_number: {
-          type: Number, // Corrected
+          type: Number,
           required: true
         },
         instruction: {
-          type: String, // Corrected
+          type: String,
           required: true
         },
         photo_url: {
-          type: String // Corrected
+          type: String
         }
       }
     ]
   },
   prep_time: {
-    type: String // Corrected
+    type: String
   },
   cook_time: {
-    type: String // Corrected
+    type: String
   },
   total_time: {
-    type: String // Corrected
+    type: String
   },
   servings: {
-    type: Number // Corrected
+    type: Number
   },
   publish_date: {
-    type: Date // Corrected
+    type: Date
   },
   photo_url: {
-    type: [String, null] // Corrected
+    type: [String, null]
   },
   nutrition: {
     type: {
@@ -74,4 +74,4 @@ const recipeSchema = new Schema({
   }
 });
 
-export default mongoose.model("Recipe", recipeSchema); // Changed model name to "Recipe"
+export default mongoose.model("Recipe", recipeSchema);
