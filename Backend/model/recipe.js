@@ -72,6 +72,8 @@ const recipeSchema = new Schema({
       sugar: Number
     }
   }
-});
+}); 
 
-export default mongoose.model("Recipe", recipeSchema);
+const Recipe = mongoose.model("Recipe", recipeSchema);
+
+export default Recipe;
