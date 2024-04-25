@@ -13,7 +13,7 @@ const userSchema = new Schema(
         },
         email: { 
             type: String, // Corrected
-            match: /^\\S+@\\S+\\.\\S+$/, // Changed pattern to match
+            match: /^\S+@\S+\.\S+$/, // Changed pattern to match
             required: true 
         },
         password_hash: { 
@@ -21,7 +21,8 @@ const userSchema = new Schema(
             required: true 
         },
         join_date: { 
-            type: Date, // Corrected
+            type: Date, 
+            default: Date.now,// Corrected
             required: true 
         },
         bio: { 
@@ -30,9 +31,10 @@ const userSchema = new Schema(
         profile_picture_url: { 
             type: String // Corrected
         },
-        favorites: {
-            type: [Schema.Types.ObjectId] // Corrected
-        }
+        favorites: [{
+            type: [Schema.Types.ObjectId],
+            ref: 'Recipe' // Assuming 'Recipe' is the name of the related model
+        }]
     }
 );
 

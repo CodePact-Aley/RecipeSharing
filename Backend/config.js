@@ -1,11 +1,11 @@
-const url = "mongodb+srv://sarjounsd:1910Sarjoun@recipesharing.qtxatk9.mongodb.net/"
+const url = "mongodb+srv://rahafao:Pi38t8-%23-k6%2A%21GH@recipesharing.qtxatk9.mongodb.net/"
 
 import express from "express";
 
 import { connect } from "mongoose";
 const app = express();
 
-const connectdb = async(dbURL) => {
+export const connectdb = async(dbURL) => {
   try{
     await connect(dbURL)
     .then(() => console.log('Connected to MongoDB'),
@@ -20,3 +20,5 @@ const connectdb = async(dbURL) => {
 connectdb(url);
 
 app.listen(3000, () => console.log("Server is running"));
+
+
