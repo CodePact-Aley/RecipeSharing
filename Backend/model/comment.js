@@ -23,4 +23,6 @@ const commentSchema = new Schema({
   }
 });
 
-export default mongoose.model("Comment", commentSchema); // Changed model name to "Comment"
+const Comment = mongoose.model("Comment", ratingSchema);
+
+export default Comment;
