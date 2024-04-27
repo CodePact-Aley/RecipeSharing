@@ -4,22 +4,22 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   _id: {
-    type: Schema.Types.ObjectId // Corrected
+    type: Schema.Types.ObjectId
   },
   recipe_id: {
-    type: Schema.Types.ObjectId // Corrected
+    type: Schema.Types.ObjectId
   },
   commenter_id: {
-    type: Schema.Types.ObjectId // Corrected
+    type: Schema.Types.ObjectId
   },
   commenter_photo: {
-    type: String // Assuming photo URL is stored as a string
+    type: String
   },
   comment_text: {
-    type: String // Corrected
+    type: String
   },
   comment_date: {
-    type: Date // Corrected
+    type: Date
   }
 });
 

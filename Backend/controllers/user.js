@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import '../config.js';
 import User from '../model/user.js'; // Import the User model
+import '../config.js';
+import User from '../model/user.js'; // Import the User model
 
 // Function to create a new user
 export const createUser = async () => {
@@ -160,38 +162,54 @@ if (process.argv.length < 3) {
 }
 
 //////////////////////////
+//////////////////////////
 // Get all users
+// export const getAllUsers = async (req, res) => {
 // export const getAllUsers = async (req, res) => {
 //     try {
 //         const users = await User.find();
 //         res.status(200).json(users);
+//         res.status(200).json(users);
 //     } catch (error) {
+//         res.status(500).json({ error: error.message });
 //         res.status(500).json({ error: error.message });
 //     }
 // };
 
 // // Get user by ID
 // export const getUserById = async (req, res) => {
+
+// // Get user by ID
+// export const getUserById = async (req, res) => {
 //     try {
+//         const user = await User.findById(req.params.id);
 //         const user = await User.findById(req.params.id);
 //         if (!user) {
 //             return res.status(404).json({ message: 'User not found' });
+//             return res.status(404).json({ message: 'User not found' });
 //         }
 //         res.status(200).json(user);
+//         res.status(200).json(user);
 //     } catch (error) {
+//         res.status(500).json({ error: error.message });
 //         res.status(500).json({ error: error.message });
 //     }
 // };
 
 // // Update user by ID
 // export const updateUserById = async (req, res) => {
+// export const updateUserById = async (req, res) => {
 //     try {
+//         const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
 //         const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
 //         if (!updatedUser) {
 //             return res.status(404).json({ message: 'User not found' });
+//             return res.status(404).json({ message: 'User not found' });
 //         }
 //         res.status(200).json(updatedUser);
+//         res.status(200).json(updatedUser);
 //     } catch (error) {
+//         res.status(500).json({ error: error.message });
 //         res.status(500).json({ error: error.message });
 //     }
 // };

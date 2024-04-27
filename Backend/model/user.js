@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
+import '../config.js';
 
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
-        _id: { 
-            type: Schema.Types.ObjectId // Corrected
-        },
+        // _id: { 
+        //     type: Schema.Types.ObjectId // Corrected
+        // },
         username: { 
             type: String, // Corrected
             required: true 
