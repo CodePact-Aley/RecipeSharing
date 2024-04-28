@@ -10,6 +10,7 @@ export async function createRecipe(req, res) {
     }
 }
 
+
 // Get all recipes
 export async function getAllRecipes(req, res) {
     try {

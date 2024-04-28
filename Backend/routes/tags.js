@@ -11,7 +11,7 @@ router.post('/tags', async (req, res) => {
   // Get all tags
   router.get('/tags', async (req, res) => {
     try {
-      const tags = await Tag.find();
+      const tags = await tags.find();
       res.json(tags);
     } catch (err) {
       res.status(500).json({ message: err.message });
@@ -19,4 +19,4 @@ router.post('/tags', async (req, res) => {
   });
   
   // Export the router
-  module.exports = router;
+  export default router;
