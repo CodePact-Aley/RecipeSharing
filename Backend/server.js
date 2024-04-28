@@ -57,6 +57,14 @@ app.use("/api", categoriesRoutes);
 import { router as tagsRoutes } from './routes/tags.js';
 app.use("/api", tagsRoutes);
 
+// Mount the ingredient routes 
+import ingredientRoutes from './routes/ingredients.js';
+app.use("/api", ingredientRoutes);
+
+// Mount the comment routes
+import commentRoutes from './routes/comment.js';
+app.use("/api", commentRoutes);
+
 // Start the server
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`); // Corrected string interpolation
