@@ -45,6 +45,18 @@ app.get('/', (req, res) => {
 import { router as recipeRoutes } from "./routes/recipe.js"; 
 app.use("/api", recipeRoutes);
 
+// Mount ratings routes
+import { router as ratingsRoutes } from './routes/ratings.js';
+app.use("/api", ratingsRoutes);
+
+// Mount categories routes
+import { router as categoriesRoutes } from './routes/categories.js';
+app.use("/api", categoriesRoutes);
+
+// Mount tags routes
+import { router as tagsRoutes } from './routes/tags.js';
+app.use("/api", tagsRoutes);
+
 // Start the server
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`); // Corrected string interpolation
