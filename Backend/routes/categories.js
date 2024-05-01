@@ -19,4 +19,4 @@ router.put('/categories/:id', updateCategoryById);
 router.delete('/categories/:id', deleteCategoryById); 
 
 // Export the router
-export default router;
+export { router };

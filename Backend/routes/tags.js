@@ -19,4 +19,4 @@ router.put('/tags/:id', updateTagById);
 router.delete('/tags/:id', deleteTagById); 
 
 // Export the router
-export default router;
+export { router };

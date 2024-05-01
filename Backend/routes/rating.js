@@ -19,4 +19,4 @@ router.put('/ratings/:id', updateRatingById);
 router.delete('/ratings/:id', deleteRatingById); 
 
 // Export the router
-export default router;
+export { router };

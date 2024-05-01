@@ -1,15 +1,39 @@
 import Recipe from '../model/recipe.js';
+import Ingredient from '../model/Ingredients.js';
+import mongoose from 'mongoose';
 
-// Create a new recipe
+
+//Create a new recipe
 export async function createRecipe(req, res) {
     try {
+        // Extract ingredients from the request body
+        const ingredientIds = req.body.ingredients;
+
+        // Check if ingredientIds are provided
+        if (!ingredientIds || !Array.isArray(ingredientIds)) {
+            return res.status(400).json({ error: 'Ingredients are required and must be an array' });
+        }
+
+        // Validate each ingredientId
+        for (const ingredientId of ingredientIds) {
+            // Check if ingredientId is a valid ObjectId
+            if (!mongoose.Types.ObjectId.isValid(ingredientId)) {
+                return res.status(400).json({ error: 'Invalid ingredientId format' });
+            }
+            // Check if the ingredient exists
+            const ingredient = await Ingredient.findById(ingredientId);
+            if (!ingredient) {
+                return res.status(404).json({ error: `Ingredient with ID ${ingredientId} not found` });
+            }
+        }
+
+        // Create the recipe with the provided ingredients
         const newRecipe = await Recipe.create(req.body);
         res.status(201).json(newRecipe);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 }
-
 
 // Get all recipes
 export async function getAllRecipes(req, res) {

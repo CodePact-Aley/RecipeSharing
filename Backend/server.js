@@ -33,20 +33,26 @@ res.status(500).json({error:"Something went wrong!"})
 
 // Define route for the root endpoint
 app.get('/', (req, res) => {
-    logger.info("Request to the root endpoint");
+    //logger.info("Request to the root endpoint");
     const startTime = Date.now();
     res.send('Welcome to the Recipe Website!');
     const endTime = Date.now();
     const responseTime = endTime - startTime;
-    logger.info(`Response time for /: ${responseTime}ms`);
+    //logger.info(`Response time for /: ${responseTime}ms`);
 });
+
+//var bodyParser = require('body-parser');
+
+import bodyParser from 'body-parser';
 
 // Mount recipe routes
 import { router as recipeRoutes } from "./routes/recipe.js"; 
+//app.use(express.json());
+app.use(bodyParser.json());
 app.use("/api", recipeRoutes);
 
 // Mount ratings routes
-import { router as ratingsRoutes } from './routes/ratings.js';
+import { router as ratingsRoutes } from './routes/rating.js';
 app.use("/api", ratingsRoutes);
 
 // Mount categories routes

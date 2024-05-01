@@ -1,0 +1,77 @@
+ratings :
+{
+    "recipe_id": "66326569e8c4b1da1edd745b",
+    "rater_id": "662a7298f3bcda73c0567af1",
+    "score": 4,
+    "rating_date": "2024-04-25T08:00:00Z"
+}
+
+recipe :
+{
+    "title": "Delicious Pasta Recipe",
+    "description": "A mouth-watering pasta recipe that will delight your taste buds.",
+    "ingredients": ["66326467e8c4b1da1edd7456"],
+    "categories": ["66326569e8c4b1da1edd745b", "663265c3f1e0342c6e72c5ec"],
+    "tags": ["663266b657af5f2034c1ac5a"],
+    "steps": [
+        { "step_number": 1, "instruction": "Cook pasta according to package instructions." },
+        { "step_number": 2, "instruction": "In a pan, heat olive oil and sauté garlic until fragrant." },
+        { "step_number": 3, "instruction": "Add chopped tomatoes and cook until softened." },
+        { "step_number": 4, "instruction": "Stir in cooked pasta and basil. Serve hot." }
+    ],
+    "prep_time": "10 minutes",
+    "cook_time": "20 minutes",
+    "total_time": "30 minutes",
+    "servings": 4,
+    "publish_date": "2024-04-23",
+    "photo_url": "https://example.com/pasta.jpg",
+    "nutrition": {
+        "calories": 350,
+        "protein": 15,
+        "carbs": 50,
+        "fat": 10,
+        "fiber": 5,
+        "sugar": 3
+    }
+}
+
+
+category:
+{
+    "name": "Main Course",
+    "description": "Recipes for main courses",
+    "recipes":["662e80df1c02f65a826fb4e8"]
+}
+
+ingeredient :
+{
+    "name": "Pasta",
+    "description": "Pasta is a staple food of traditional Italian cuisine.",
+    "nutritional_value": {
+        "calories": 131,
+        "protein": 5.1,
+        "carbs": 25.0,
+        "fat": 1.1,
+        "fiber": 2.7,
+        "sugar": 0.8
+    }
+}
+
+
+user: {
+    "username": "sarjoun.sd",
+    "email": "sarjoun@example.com",
+    "password_hash": "password1",
+    "join_date": "2024-04-25T08:00:00Z",
+    "bio": "This is a bio for the example user.",
+    "profile_picture_url": "https://example.com/profile_picture.jpg",
+    "favorites": ["recipe_id_1", "recipe_id_2"]
+}
+
+tags:
+{
+    "name": "Easy",
+    "description": "Recipes that are quick and simple to make",
+    "taggedBy": ["user_id1", "user_id2"],
+    "recipes": ["recipe_id1", "recipe_id2"]
+}

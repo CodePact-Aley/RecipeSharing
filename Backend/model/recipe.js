@@ -9,20 +9,23 @@ const recipeSchema = new Schema({
 // },
 title: {
     type: String,
-    required: true
+   // required: true
 },
 description: {
     type: String,
-    required: true
+    //required: true
 },
   ingredients: {
-    type: [Schema.Types.ObjectId]
+    type: [Schema.Types.ObjectId],
+    ref: 'Ingredient'
   },
   categories: {
-    type: [Schema.Types.ObjectId]
+    type: [Schema.Types.ObjectId],
+    ref: 'Category'
   },
   tags: {
-    type: [Schema.Types.ObjectId]
+    type: [Schema.Types.ObjectId],
+    ref:'Tag'
   },
   steps: {
     type: [
