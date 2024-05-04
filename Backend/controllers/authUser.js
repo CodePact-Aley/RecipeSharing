@@ -5,8 +5,8 @@ import User from '../model/user.js';
 // Register a new user
 export const registerUser = async (req, res) => {
     try {
-        // Extract username, email, and password from request body
-        const { username, email, password } = req.body;
+        // Extract username, email, password, and role from request body
+        const { username, email, password_hash, role } = req.body;
 
         // Check if the email is already registered
         const existingUser = await User.findOne({ email });
@@ -14,18 +14,22 @@ export const registerUser = async (req, res) => {
             return res.status(400).json({ message: 'Email already exists' });
         }
 
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10);
+        // Generate a salt and hash the password
+        const hashedPassword = await bcrypt.hash(password_hash, 10); // 10 is the number of salt rounds
 
-        // Create a new user
-        const newUser = new User({ username, email, password_hash: hashedPassword });
+        // Create a new user with the specified role
+        const newUser = new User({ username, email, password_hash: hashedPassword, role });
         await newUser.save();
+
+        
 
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
+
+
 
 // Login user
 export const loginUser = async (req, res) => {
@@ -40,7 +44,7 @@ export const loginUser = async (req, res) => {
         }
 
         // Check if password is correct
-        const isPasswordValid = await bcrypt.compare(password, user.password_hash);
+        const isPasswordValid = await bcrypt.compare(password, user.password_hash); // Compare with original password
         if (!isPasswordValid) {
             return res.status(401).json({ message: 'Invalid password' });
         }
@@ -53,6 +57,7 @@ export const loginUser = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 // Logout user (optional)
 
