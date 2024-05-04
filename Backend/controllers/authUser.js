@@ -29,7 +29,7 @@ export const registerUser = async (req, res) => {
     }
 };
 
-
+// $2b$10$abcdefgijklmnopqrstuvyHvzy0RNKwOe6MHwCDLXSmFJ/cKk2oC
 
 // Login user
 export const loginUser = async (req, res) => {
