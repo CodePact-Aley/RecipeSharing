@@ -7,8 +7,18 @@ import logger from './logger.js';
 import responseTime from 'response-time';
 import { connectdb } from './config.js';// Import dbConnect function
 import dotenv from 'dotenv'; // Import dotenv
+import bodyParser from 'body-parser';
+// Load environment variables from .env file
 
 dotenv.config();
+
+console.log("DB_URI from environment variables:", process.env.DB_URI);
+connectdb();
+const app = express();
+// Call dbConnect function to connect to the database
+
+
+
 
 console.log("DB_URI from environment variables:", process.env.DB_URI);
 connectdb();
@@ -41,13 +51,19 @@ app.get('/', (req, res) => {
 
 //var bodyParser = require('body-parser');
 
-import bodyParser from 'body-parser';
+
 
 // Mount recipe routes
 import { router as recipeRoutes } from "./routes/recipe.js"; 
 //app.use(express.json());
 app.use(bodyParser.json());
 app.use("/api", recipeRoutes);
+
+import { router as userRoutes } from './routes/userRoutes.js';
+app.use("/api", userRoutes);
+
+import { router as authRoutes } from './routes/authRoutes.js';
+app.use("/api", authRoutes);
 
 // Mount ratings routes
 import { router as ratingsRoutes } from './routes/rating.js';
