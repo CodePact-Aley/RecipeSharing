@@ -20,3 +20,4 @@ router.get('/auth/chef-profile', authenticateUser, checkChefRole, (req, res) => 
 });
 
 export  {router};
+  
