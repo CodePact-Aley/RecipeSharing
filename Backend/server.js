@@ -8,14 +8,12 @@ import responseTime from 'response-time';
 import { connectdb } from './config.js';// Import dbConnect function
 import dotenv from 'dotenv'; // Import dotenv
 
-const app = express();
-// Call dbConnect function to connect to the database
-connectdb();
-
-// Load environment variables from .env file
 dotenv.config();
 
-const port = process.env.PORT || 5001; // Change the default port to 5001 or any other available port
+console.log("DB_URI from environment variables:", process.env.DB_URI);
+connectdb();
+const app = express(); 
+const port = process.env.PORT || 5001;
 
 
 // Middleware
@@ -72,6 +70,6 @@ import commentRoutes from './routes/comment.js';
 app.use("/api", commentRoutes);
 
 // Start the server
-app.listen(port, () => {
+app.listen(process.env.port, () => {
     console.log(`App is listening at port ${port}`); // Corrected string interpolation
 });
