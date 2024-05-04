@@ -8,6 +8,7 @@ ratings :
 
 recipe :
 {
+    "author_id":"662a7298f3bcda73c0567af1",
     "title": "Delicious Pasta Recipe",
     "description": "A mouth-watering pasta recipe that will delight your taste buds.",
     "ingredients": ["66326467e8c4b1da1edd7456"],

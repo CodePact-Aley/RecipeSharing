@@ -10,13 +10,13 @@ router.post('/recipes', createRecipe);
 router.get('/recipes', getAllRecipes);
 
 // Route to get a recipe by ID
-router.get('/recipes/:recipeId', getRecipeById);
+router.get('/recipes/:id', getRecipeById);
 
 // Route to update a recipe by ID
-router.put('/recipes/:recipeId', updateRecipeById);
+router.put('/recipes/:id', updateRecipeById);
 
 // Route to delete a recipe by ID
-router.delete('/recipes/:recipeId', deleteRecipeById);
+router.delete('/recipes/:id', deleteRecipeById);
 
 // Export the router
 export { router };
