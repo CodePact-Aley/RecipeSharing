@@ -14,9 +14,10 @@ router.put('/auth/update-password',authenticateUser,  updateUserPassword);
 
 
 // Example of a protected route that requires authentication
-router.get('/auth/profile', authenticateUser, (req, res) => {
-    // If the request reaches this point, it means the user is authenticated
-    res.json({ message: 'Authenticated user profile' });
+router.get('/auth/chef-profile', authenticateUser, checkChefRole, (req, res) => {
+    // If the request reaches this point, it means the user is authenticated and is a chef
+    res.json({ message: 'Authenticated chef profile' });
 });
 
-export {router};
+export  {router};
+  
