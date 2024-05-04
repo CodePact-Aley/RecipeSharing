@@ -58,6 +58,38 @@ export const loginUser = async (req, res) => {
     }
 };
 
+// Function to update user password
+export const updateUserPassword = async (req, res) => {
+    try {
+        const { currentPassword, newPassword } = req.body;
+        const userId = req.userData.userId; // Extract user ID from authenticated user data
+
+        // Find the user by ID
+        const user = await User.findById(userId);
+        if (!user) {
+            throw new Error('No user found with the specified ID.');
+        }
+
+        // Check if the current password provided matches the user's current password
+        const isPasswordValid = await bcrypt.compare(currentPassword, user.password_hash);
+        if (!isPasswordValid) {
+            throw new Error('Current password is incorrect.');
+        }
+
+        // Generate a new salt and hash the new password
+        const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+
+        // Update the user's password
+        user.password_hash = hashedNewPassword;
+        await user.save();
+
+        res.json({ message: 'Password updated successfully' });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+
 
 // Logout user (optional)
 
