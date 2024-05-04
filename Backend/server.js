@@ -72,6 +72,14 @@ app.use("/api", ingredientRoutes);
 import commentRoutes from './routes/comment.js';
 app.use("/api", commentRoutes);
 
+//Mount the user routes
+import {router as userRoutes} from "./routes/userRoutes.js"
+app.use("/api",userRoutes);
+
+//Mount the auth routes
+import {router as authRoutes} from "./routes/authRoutes.js"
+app.use("/api",authRoutes);
+
 // Start the server
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`); // Corrected string interpolation

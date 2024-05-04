@@ -3,17 +3,18 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
-//   author_id: {
-//     type: Schema.Types.ObjectId,
-//     required: true
-// },
+   author_id: {
+     type: Schema.Types.ObjectId,
+     required: true,
+     ref:'User'
+ },
 title: {
     type: String,
-   // required: true
+    required: true
 },
 description: {
     type: String,
-    //required: true
+    required: true
 },
   ingredients: {
     type: [Schema.Types.ObjectId],
