@@ -15,5 +15,4 @@ router.get('/auth/profile', authenticateUser, (req, res) => {
     res.json({ message: 'Authenticated user profile' });
 });
 
-// Export the router
-export { router };
+export default router;
