@@ -10,16 +10,13 @@ import dotenv from 'dotenv'; // Import dotenv
 // Load environment variables from .env file
 dotenv.config();
 console.log("DB_URI from environment variables:", process.env.DB_URI);
+connectdb();
 const app = express();
 // Call dbConnect function to connect to the database
-connectdb();
+const port = process.env.PORT || 3000;
 
 
 
-console.log("DB_URI from environment variables:", process.env.DB_URI);
-connectdb();
-const app = express(); 
-const port = process.env.PORT || 5001;
 
 
 // Middleware
@@ -76,6 +73,6 @@ import commentRoutes from './routes/comment.js';
 app.use("/api", commentRoutes);
 
 // Start the server
-app.listen(process.env.port, () => {
+app.listen(port, () => {
     console.log(`App is listening at port ${port}`); // Corrected string interpolation
 });

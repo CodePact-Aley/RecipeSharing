@@ -11,6 +11,7 @@ export async function createIngredient(req, res) {
 }
 
 // Get all ingredients
+//async is used ti check if they are performing correctly 
 export async function getAllIngredients(req, res) {
     try {
         const ingredients = await Ingredient.find();
