@@ -1,0 +1,59 @@
+.grid-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap; /* Allow grid items to wrap */
+    max-width: 800px; /* Set maximum width for the grid */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add some padding */
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden; /* Ensure text overlay stays inside grid item */
+    width: calc(50% - 20px); /* Set width to half of the container minus margin */
+    height: 400px; /* Set height to 400px */
+    margin: 10px; /* Add some margin between grid items */
+}
+
+/* Set the width of each grid item to 100% on screens with max-width = 768px */
+@media only screen and (max-width: 768px) {
+    .grid-item {
+        width: calc(100% - 20px); /* Set width to full width of the container minus margin */
+    }
+}
+
+/* Make every pair of grid items bigger in width */
+.grid-item.full-width {
+    width: calc(100% - 20px); /* Set width to full width of the container minus margin */
+}
+
+/* Set a larger height for all images */
+.grid-item img {
+    width: 100%; /* Ensure images fill the grid item */
+    height: 100%; /* Ensure images fill the grid item */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 8px; /* Add some border radius for rounded corners */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Freckle Face', cursive;
+    font-size: 96px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add opacity transition */
+    opacity: 0; /* Initially hide the text */
+}
+
+.grid-item:hover .text-overlay {
+    transform: translateY(0);
+    opacity: 1; /* Show the text on hover */
+}
+

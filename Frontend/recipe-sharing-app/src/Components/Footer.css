@@ -1,0 +1,83 @@
+.viewer-container {
+    width: auto; /* Adjust as needed */
+    padding: 20px 0; /* Adjust padding as needed */
+    background-color: transparent; /* Remove gray background */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-start; /* Change to flex-start to remove space between images */
+    overflow-x: auto; /* Allow horizontal scrolling if images exceed container width */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+.image-wrapper {
+    position: relative; /* For positioning the hover effect */
+    margin-right: 0; /* Remove margin between images */
+    width: 255px; /* Updated width */
+    height: 250px; /* Updated height */
+}
+
+.image-wrapper img {
+    width: 100%; /* Ensure image covers the whole wrapper */
+    height: 100%; /* Ensure image covers the whole wrapper */
+}
+
+.image-wrapper:hover::after {
+    content: attr(data-letter); /* Display the letter */
+    position: absolute; /* Position the letter */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the letter */
+    background-color: rgba(255, 0, 0, 0.7); /* Faded red background color */
+    color: white; /* Text color of the letter */
+    padding: 5px 10px; /* Padding around the letter */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold font */
+    font-size: 40px; /* Larger font size */
+    width: 92.15%; /* Cover the whole image */
+    height: 96%; /* Cover the whole image */
+    display: flex; /* Center the letter */
+    justify-content: center; /* Center the letter */
+    align-items: center; /* Center the letter */
+    z-index: 1; /* Ensure the letter is above the image */
+    opacity: 0.9; /* Slight transparency */
+}
+
+.footer-container {
+    width: 100%;
+    background-color: black;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around; /* Space out the sections evenly */
+    text-align: center; /* Center text within each section */
+}
+
+.footer-section {
+    flex: 1; /* Allow each section to take up equal space */
+    margin: 0 10px; /* Margin between sections */
+    color: white; /* Make text white */
+}
+
+.footer-section h3 {
+    font-size: 18px; /* Adjust heading size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.footer-section p, .footer-section ul {
+    color: #b7b7b7;
+    font-size: 16px; /* Adjust text size */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+.footer-section ul {
+    list-style: none; /* Remove bullet points */
+}
+
+.footer-section ul li {
+    margin-bottom: 5px; /* Space between list items */
+}

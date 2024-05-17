@@ -1,0 +1,16 @@
+{
+    "slides": [
+        {
+            "src": "slide1.png",
+            "alt": "Image 1 for carousel"
+        },
+        {
+            "src": "slide1.png",
+            "alt": "Image 2 for carousel"
+        }
+    ],
+    "slidetxt": [
+        { "type": "text", "content": "Welcome to Recipe Community" },
+        { "type": "text", "content": "Delicious Recipes Awaits" }
+    ]
+}
