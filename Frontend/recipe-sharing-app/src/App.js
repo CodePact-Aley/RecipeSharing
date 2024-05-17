@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home/Home.js';
 import NoMenuLayout from './pages/noMenuLayout';
 import Layout from './pages/Layout';
-import Blogs from './pages/Blogs';
+import Blogs from './pages/Blogs/Blogs.js';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Signup from './pages/Signup/Signup.js';

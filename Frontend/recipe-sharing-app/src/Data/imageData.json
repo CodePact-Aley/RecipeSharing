@@ -1,0 +1,24 @@
+{
+    "gridimages": [
+        {
+            "src": "image.png",
+            "alt": "Image 1",
+            "text": "Pizza"
+        },
+        {
+            "src": "burger.png",
+            "alt": "Image 2",
+            "text": "Burger"
+        },
+        {
+            "src": "chicken.png",
+            "alt": "Image 3",
+            "text": "Chicken"
+        },
+        {
+            "src": "soup.png",
+            "alt": "Image 4",
+            "text": "Soup"
+        }
+    ]
+}

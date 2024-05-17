@@ -20,7 +20,6 @@ const links = [
     {
         id: 4,
         text: 'Profile',
-        path: '/profile',
         dropdownOptions: ['Edit','Logout']
     },
     

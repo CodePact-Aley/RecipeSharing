@@ -11,6 +11,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle effect */
     transition: all 0.3s ease; /* Smooth transition for animations */
     transform:rotate3d(360deg);
+    z-index: 2;
 }
 
 .option {
