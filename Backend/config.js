@@ -1,22 +1,24 @@
-const url = "mongodb+srv://sarjounsd:1910Sarjoun@recipesharing.qtxatk9.mongodb.net/"
-
 import express from "express";
-
 import { connect } from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
 
-const connectdb = async(dbURL) => {
-  try{
-    await connect(dbURL)
-    .then(() => console.log('Connected to MongoDB'),
-    (error) => console.error('MongoDB connection error:', error)
-    );
-
-  } catch(error){
-    console.log(error)
+export const connectdb = async () => {
+  try {
+    await connect(process.env.DB_URI);
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
   }
 };
 
-connectdb(url);
+// Call connectdb function after loading environment variables
+//connectdb();
+// Make sure this line is called after dotenv.config()
 
-app.listen(3000, () => console.log("Server is running"));
+//const port = process.env.PORT || 5001;
+
+//app.listen(port, () => console.log(`Server is running on port ${port}`));

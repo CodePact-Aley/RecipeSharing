@@ -1,0 +1,116 @@
+/* editprofile.module.css */
+
+.editUserDetailsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../../../assets/signup2.png');
+    background-size: cover;
+    z-index: -1;
+}
+
+.card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+.logo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.inputgroup {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputgroup input,
+.inputgroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.inputgroup input:hover,
+.inputgroup textarea:hover {
+    animation: border-glow 0.5s ease infinite alternate;
+}
+
+.inputgroup input:focus,
+.inputgroup textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.inputgroup input:focus + .label,
+.inputgroup textarea:focus + .label,
+.inputgroup input:not(:placeholder-shown) + .label,
+.inputgroup textarea:not(:placeholder-shown) + .label {
+    top: -10px;
+    font-size: 12px;
+    color: #4caf50;
+    transition: all 0.3s ease;
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+@keyframes border-glow {
+    from {
+        border-color: #ccc;
+    }
+    to {
+        border-color: #4caf50;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+

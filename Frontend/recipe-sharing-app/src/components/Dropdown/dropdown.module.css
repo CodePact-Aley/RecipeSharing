@@ -1,0 +1,28 @@
+/* dropdown.module.css */
+.dropdown {
+    position: absolute;
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(47, 43, 82, 0.44);
+    padding: 12px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle effect */
+    transition: all 0.3s ease; /* Smooth transition for animations */
+    transform:rotate3d(360deg);
+}
+
+.option {
+    padding: 10px; /* Increased padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-size: 16px; /* Increased font size */
+    transition: all 0.4s ease;
+}
+
+.option:hover {
+    background-color: rgba(204, 204, 204, 0.1);
+    color: white; /* Change text color on hover */
+    border-radius: 10px;
+}
