@@ -16,7 +16,7 @@ export const connectdb = async () => {
 };
 
 // Call connectdb function after loading environment variables
-connectdb();
+//connectdb();
 // Make sure this line is called after dotenv.config()
 
 //const port = process.env.PORT || 5001;

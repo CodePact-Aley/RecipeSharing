@@ -1,0 +1,52 @@
+/* CommentSection.module.css */
+.commentSection {
+    margin-top: 20px;
+}
+
+.commentHeading {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.commentList {
+    list-style: none;
+    padding: 0;
+}
+
+.commentItem {
+    margin-bottom: 10px;
+}
+
+
+
+.addComment {
+    margin-top: 20px;
+    display: flex;
+}
+
+.commentInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.commentButton {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggleCommentForm {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
