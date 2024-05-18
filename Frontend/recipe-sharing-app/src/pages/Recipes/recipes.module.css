@@ -1,0 +1,49 @@
+/* recipes.module.css */
+.recipesPage {
+    padding: 20px;
+}
+
+.recipesTitle {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.addRecipeForm {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.addRecipeForm h2 {
+    margin-bottom: 10px;
+}
+
+.addRecipeForm input,
+.addRecipeForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.addRecipeForm button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addRecipeForm button:hover {
+    background-color: #0056b3;
+}
+
+.recipeGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
