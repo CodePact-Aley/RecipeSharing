@@ -5,6 +5,7 @@ import Home from './pages/Home/Home.js';
 import NoMenuLayout from './pages/noMenuLayout';
 import Layout from './pages/Layout';
 import Blogs from './pages/Blogs/Blogs.js';
+import Recipes from './pages/Recipes/Recipes.js';
 import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Signup from './pages/Signup/Signup.js';
@@ -44,6 +45,7 @@ useEffect(() => {
       {/* Routes for pages with the navbar */}
       <Route path="/" element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}>
         <Route index element={<Home />} />
+        <Route path="recipes" element={<Recipes />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="contact" element={<Contact />} />
         
